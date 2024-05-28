@@ -1,6 +1,3 @@
 ﻿namespace Domain;
 
-public class TokenModel
-{
-    
-}
+public record TokenModel(string AccessToken, string RefreshToken);

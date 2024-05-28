@@ -1,14 +1,21 @@
 ﻿namespace UserManager;
 
-public class UserManagerFacade : IUserManager
+public class UserManagerFacade(IUserRepository users) : IUserManager
 {
-    public Task<bool> IsKnownUserAsync(string username, CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<bool> IsKnownUserAsync(string username, CancellationToken cancellationToken = default)
+        => await users.GetUserByNameAsync(username, cancellationToken) != null;
 
-    public Task<UserModel> CreateNewUserAsync(UserModel user, CancellationToken cancellationToken = default)
+    public Task<UserModel> CreateNewUserAsync(UserMetadata user, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        user.Deconstruct(out var username, out var password);
+
+        return users.CreateNewUser(
+            new(username, password.Hashify()) {
+                Uuid = Guid.NewGuid(),
+                Email = user.Email,
+                CreatedTime = DateTime.UtcNow
+            },
+            cancellationToken
+        );
     }
 }

@@ -6,9 +6,13 @@ public class LoginController(IAuthManager authManager) : ControllerBase
 {
     [HttpPost]
     [AllowAnonymous]
-    [ServiceFilter<GuardAgainstEmptyUsernameAndPassword>]
     public async Task<IActionResult> Post([FromBody] UserLogin login, CancellationToken cancellationToken)
     {
+        if (login.Username.IsNullOrEmpty() || login.Password.IsNullOrEmpty())
+        {
+            return BadRequest("username and password are required.");
+        }
+
         var user = await authManager.AuthenticateAsync(login, cancellationToken);
 
         if (user == null)

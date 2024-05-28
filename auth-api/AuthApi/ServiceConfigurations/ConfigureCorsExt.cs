@@ -5,11 +5,13 @@ namespace AuthApi.ServiceConfigurations;
 public static class ConfigureCorsExt
 {
     public static void ConfigureCors(this IServiceCollection services) =>
-        services.AddCors(options =>
-        {
-            options.AddDefaultPolicy(BuildDefaultPolicy);
-            options.AddPolicy("CorsPolicyAllowAny", BuildAllowAnyPolicy);
-        });
+        services.AddCors(
+            options =>
+            {
+                options.AddDefaultPolicy(BuildDefaultPolicy);
+                options.AddPolicy("CorsPolicyAllowAny", BuildAllowAnyPolicy);
+            }
+        );
 
     private static void BuildDefaultPolicy(CorsPolicyBuilder policy) =>
         policy.SetIsOriginAllowed(origin => new Uri(origin).IsLoopback);

@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthManager.Contract", "Aut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthManager", "AuthManager\AuthManager.csproj", "{451A447A-95EA-4569-916D-191E0F4A1E77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStorage.Contract", "DataStorage.Contract\DataStorage.Contract.csproj", "{AE6D6729-8A58-4E49-84BD-138DB8F59BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStorage", "DataStorage\DataStorage.csproj", "{EEFB0293-2A5A-450D-94D3-1AD74399B8F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,13 @@ Global
 		{451A447A-95EA-4569-916D-191E0F4A1E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451A447A-95EA-4569-916D-191E0F4A1E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451A447A-95EA-4569-916D-191E0F4A1E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6D6729-8A58-4E49-84BD-138DB8F59BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6D6729-8A58-4E49-84BD-138DB8F59BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6D6729-8A58-4E49-84BD-138DB8F59BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6D6729-8A58-4E49-84BD-138DB8F59BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEFB0293-2A5A-450D-94D3-1AD74399B8F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFB0293-2A5A-450D-94D3-1AD74399B8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFB0293-2A5A-450D-94D3-1AD74399B8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFB0293-2A5A-450D-94D3-1AD74399B8F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

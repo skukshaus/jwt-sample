@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AuthFacade.Contract\AuthFacade.Contract.csproj" />
+      <ProjectReference Include="..\DataStorage.Contract\DataStorage.Contract.csproj" />
     </ItemGroup>
 
 </Project>

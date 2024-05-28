@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DataStorage.Contract\DataStorage.Contract.csproj" />
       <ProjectReference Include="..\UserManager.Contract\UserManager.Contract.csproj" />
     </ItemGroup>
 

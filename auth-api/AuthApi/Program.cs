@@ -4,7 +4,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
-builder.Services.AddActionFilters();
 builder.Services.AddMvc();
 
 builder.Services.ConfigureServices();
