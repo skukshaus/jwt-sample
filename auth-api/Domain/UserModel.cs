@@ -7,5 +7,9 @@ public record UserModel(string Username, string Password) : UserMetadata(Usernam
     public DateTime CreatedTime { get; init; }
     public DateTime LastUpdate { get; init; }
 
-    public FrozenSet<RefreshTokenModel> RefreshTokens { get; init; } = FrozenSet<RefreshTokenModel>.Empty;
+    public IReadOnlyList<RefreshTokenModel> RefreshTokens { get; init; } = new List<RefreshTokenModel>();
+
+    public UserModel InvalidateExpiredTokens() => this with {
+        RefreshTokens = [..RefreshTokens.Where(x => x.ExpirationTime > DateTime.UtcNow)]
+    };
 }

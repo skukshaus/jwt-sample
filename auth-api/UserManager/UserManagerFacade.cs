@@ -13,6 +13,8 @@ public class UserManagerFacade(IUserRepository users) : IUserManager
             new(username, password.Hashify()) {
                 Uuid = Guid.NewGuid(),
                 Email = user.Email,
+                Forename = user.Forename,
+                Surname = user.Surname,
                 CreatedTime = DateTime.UtcNow
             },
             cancellationToken

@@ -6,5 +6,11 @@ public static class ConfigureServicesExt
         .AddScoped<IUserRepository, UserRepository>()
             
         .AddScoped<IUserManager, UserManagerFacade>()
-        .AddScoped<IAuthManager, AuthManagerFacade>();
+
+        .AddScoped<IAuthManager, AuthManagerFacade>()
+        
+        .AddTransient<ISecurityTokenGenerator, SecurityTokenGenerator>()
+        .AddTransient<ISecurityTokenProvider, SecurityTokenProvider>()
+        .AddTransient<ISecurityTokenOptionFactory, SecurityTokenOptionFactory>()
+    ;
 }
